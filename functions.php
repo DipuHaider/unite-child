@@ -26,5 +26,22 @@ function post_type_films() {
 			'public' => true,
 		)
 	);
+	$labels = array(
+		'name' => __( 'Genre' ),
+		'singular_name' => __( 'Genre' ),
+		'all_items' => __( 'All Genre' ),
+		'choose_from_most_used' => __( 'Choose from the most used Genre' ),
+		'add_new_item' => __( 'Add New Genre' ),
+		'menu_name' => __( 'Genre' ),
+	); 
+	register_taxonomy('genre','films',array(
+		'hierarchical' => false,
+		'labels' => $labels,
+		'show_ui' => true,
+		'show_admin_column' => true,
+		'update_count_callback' => '_update_post_term_count',
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'genre' ),
+  ));
 }
 ?>
