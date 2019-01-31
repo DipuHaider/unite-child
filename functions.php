@@ -12,4 +12,19 @@ function my_theme_enqueue_styles() {
     );
 }
 
+add_action( 'init', 'post_type_films' );
+
+function post_type_films() {
+	register_post_type( 'Films',
+		array(
+			'labels' => array(
+				'name' => __( 'Films' ),
+				'singular_name' => __( 'Film' ),
+				'all_items'           => __( 'All Films'),
+				'add_new_item'        => __( 'Add New Films')
+			),
+			'public' => true,
+		)
+	);
+}
 ?>
