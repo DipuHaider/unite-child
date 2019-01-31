@@ -24,6 +24,7 @@ function post_type_films() {
 				'add_new_item'        => __( 'Add New Films')
 			),
 			'public' => true,
+			'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),// To activate custom feilds
 		)
 	);
 // new taxonomy in post type film	- Genre
