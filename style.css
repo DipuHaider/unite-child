@@ -1,0 +1,10 @@
+/*
+Theme Name: unite-child
+Theme URI: https://wordpress.org/themes/unite/
+Description: This is a custom child theme that I have created.
+Author: Dipu Haider
+Author URI: http: //dipuhaider.com/
+Template: unite
+Version: 0.1
+*/
+@import url("../unite/style.css");
