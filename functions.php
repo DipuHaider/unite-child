@@ -65,7 +65,8 @@ function post_type_films() {
 		'query_var'         => true,
 		'rewrite'           => array( 'slug' => 'country' ),
 	);
-	register_taxonomy('country','films'), $args );
+	register_taxonomy('country', array( 'films'), $args );
+	
 // new taxonomy in post type film	- Year
 	$labels = array(
 		'name' => __( 'Year' ),
@@ -84,7 +85,7 @@ function post_type_films() {
 		'query_var'         => true,
 		'rewrite'           => array( 'slug' => 'year' ),
 	);
-	register_taxonomy('year','films'), $args );
+	register_taxonomy('year', array( 'films'), $args );
 // new taxonomy in post type film	- Actors
 	$labels = array(
 		'name' => __( 'Actors' ),
@@ -103,6 +104,6 @@ function post_type_films() {
 		'query_var'         => true,
 		'rewrite'           => array( 'slug' => 'actors' ),
 	);
-	register_taxonomy('actors','films'), $args );
+	register_taxonomy('actors', array( 'films'), $args );
 }
 ?>
