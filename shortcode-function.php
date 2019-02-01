@@ -5,7 +5,7 @@ add_shortcode( 'movielist', 'list_of_movie_shortcode' );
 function list_of_movie_shortcode() {
 	
 // the query
-$wpb_all_query = new WP_Query(array('post_type'=>'films', 'post_status'=>'publish', 'posts_per_page'=>-1));?>
+$wpb_all_query = new WP_Query(array('post_type'=>'films', 'post_status'=>'publish', 'posts_per_page' => 5, 'orderby' => 'post_date', 'order' => 'DESC'));?>
  
 <?php if ( $wpb_all_query->have_posts() ) : ?>
  
