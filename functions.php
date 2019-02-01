@@ -27,7 +27,7 @@ function post_type_films() {
 			'public' => true,
 			'has_archive' => true,
 			'menu_icon' => '',
-			'rewrite' => array('slug' => 'films_slug'),
+			'rewrite' => array( 'slug' => 'films', 'with_front' => false ),
 			'supports'  => array( 'title', 'editor', 'thumbnail' , 'custom-fields', 'comments', 'genesis-cpt-archives-settings' )       
 	);
 	register_post_type( 'films', $args);	
