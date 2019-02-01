@@ -15,18 +15,23 @@ function my_theme_enqueue_styles() {
 add_action( 'init', 'post_type_films' );
 //add new type of post "Films"
 function post_type_films() {
-	register_post_type( 'Films',
-		array(
-			'labels' => array(
-				'name' => __( 'Films' ),
-				'singular_name' => __( 'Film' ),
-				'all_items'           => __( 'All Films'),
-				'add_new_item'        => __( 'Add New Films')
-			),
+	
+	 $labels = array(
+			'name' => __( 'Films' ),
+			'singular_name' => __( 'Film' ),
+			'all_items'           => __( 'All Films'),
+			'add_new_item'        => __( 'Add New Films')
+			);
+	 $args = array(
+			'labels' => $labels,
 			'public' => true,
-			'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ),// To activate custom feilds
-		)
+			'has_archive' => true,
+			'menu_icon' => '',
+			'rewrite' => array('slug' => 'films_slug'),
+			'supports'  => array( 'title', 'editor', 'thumbnail' , 'custom-fields', 'comments', 'genesis-cpt-archives-settings' )       
 	);
+	register_post_type( 'films', $args);	
+
 // new taxonomy in post type film	- Genre
 	$labels = array(
 		'name' => __( 'Genre' ),
