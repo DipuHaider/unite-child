@@ -36,15 +36,17 @@ function post_type_films() {
 		'add_new_item' => __( 'Add New Genre' ),
 		'menu_name' => __( 'Genre' ),
 	); 
-	register_taxonomy('genre','films',array(
-		'hierarchical' => false,
-		'labels' => $labels,
-		'show_ui' => true,
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
 		'show_admin_column' => true,
 		'update_count_callback' => '_update_post_term_count',
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'genre' ),
-	));
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'genre' ),
+	);
+	register_taxonomy( 'genre', array( 'films' ), $args );
+	
 // new taxonomy in post type film	- Country
 	$labels = array(
 		'name' => __( 'Country' ),
@@ -54,15 +56,16 @@ function post_type_films() {
 		'add_new_item' => __( 'Add New Country' ),
 		'menu_name' => __( 'Country' ),
 	); 
-	register_taxonomy('country','films',array(
-		'hierarchical' => false,
-		'labels' => $labels,
-		'show_ui' => true,
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
 		'show_admin_column' => true,
 		'update_count_callback' => '_update_post_term_count',
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'country' ),
-	));
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'country' ),
+	);
+	register_taxonomy('country','films'), $args );
 // new taxonomy in post type film	- Year
 	$labels = array(
 		'name' => __( 'Year' ),
@@ -72,15 +75,16 @@ function post_type_films() {
 		'add_new_item' => __( 'Add New Year' ),
 		'menu_name' => __( 'Year' ),
 	); 
-	register_taxonomy('year','films',array(
-		'hierarchical' => false,
-		'labels' => $labels,
-		'show_ui' => true,
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
 		'show_admin_column' => true,
 		'update_count_callback' => '_update_post_term_count',
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'year' ),
-	));
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'year' ),
+	);
+	register_taxonomy('year','films'), $args );
 // new taxonomy in post type film	- Actors
 	$labels = array(
 		'name' => __( 'Actors' ),
@@ -90,14 +94,15 @@ function post_type_films() {
 		'add_new_item' => __( 'Add New Actors' ),
 		'menu_name' => __( 'Actors' ),
 	); 
-	register_taxonomy('actors','films',array(
-		'hierarchical' => false,
-		'labels' => $labels,
-		'show_ui' => true,
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
 		'show_admin_column' => true,
 		'update_count_callback' => '_update_post_term_count',
-		'query_var' => true,
-		'rewrite' => array( 'slug' => 'actors' ),
-	));
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'actors' ),
+	);
+	register_taxonomy('actors','films'), $args );
 }
 ?>
